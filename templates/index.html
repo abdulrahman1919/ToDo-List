@@ -13,17 +13,56 @@
     <div class="superdiv">
         <div class="todomain">
             <h2>Add To-Do</h2>
-            <form action="">
+            <form method="POST">
                 <div class="labinput">
                     <label>Title:</label>
                     <input type="text" name="title" placeholder="Title">
                 </div>
                 <div class="labinput">
                     <label>Description:</label>
-                    <input type="text" name="description" placeholder="Description">
+                    <input type="text" name="description" placeholder="Description" maxlength="100">
                 </div>
                 <button type="submit">Add</button>
             </form>
+        </div>
+        <div class="todolist">
+            <h2>All To-Dos</h2>
+            <div class="todoitems">
+                <div class="todoitem">
+                    <h2>1</h2>
+                    <div class="todoname">
+                        Lunch
+                    </div>
+                    <div class="discdiv">
+                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on  note book on the base of my</p>
+                    </div>
+
+                    <div class="btns">
+                        <form action="">
+                            <button id="delbtn">Delete</button>
+                            <button id="donebtn">click to Done</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="todoitems">
+                <div class="todoitem">
+                    <h2>1</h2>
+                    <div class="todoname">
+                        Lunch
+                    </div>
+                    <div class="discdiv">
+                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on  note book on the base of my</p>
+                    </div>
+
+                    <div class="btns">
+                        <form action="">
+                            <button id="delbtn">Delete</button>
+                            <button id="donebtn">click to Done</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
