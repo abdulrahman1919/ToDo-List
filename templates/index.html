@@ -1,12 +1,31 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List</title>
-    <link rel="stylesheet" href="{% static 'stylesheets/style.css'%}">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <span>To-Do-List</span>
+    <div class="superdiv">
+        <div class="todomain">
+            <h2>Add To-Do</h2>
+            <form action="">
+                <div class="labinput">
+                    <label>Title:</label>
+                    <input type="text" name="title" placeholder="Title">
+                </div>
+                <div class="labinput">
+                    <label>Description:</label>
+                    <input type="text" name="description" placeholder="Description">
+                </div>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
