@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('todoapp.urls')),
     path('addtodo', include('todoapp.urls')),
+    path('statuschange', include('todoapp.urls')),
+    path('deltodo', include('todoapp.urls')),
 ]

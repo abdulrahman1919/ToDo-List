@@ -8,7 +8,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static '/stylesheets/style.css'%}">
 </head>
-
 <body>
     <span>To-Do-List</span>
     <div class="superdiv">
@@ -30,177 +29,59 @@
         <div class="todolist">
             <h2>All To-Dos</h2>
             <div class="todoitems">
-                <div class="todoitem">
-                    <h2>1</h2>
+                {% if  todos|length == 0%}
+                <div class='emptydiv'>
+                    empty
+                </div>
+                {% else %}
+                {% for todo in  todos%}
+                {% if todo.status == 'Done' %}
+                <div class="todoitem" style='background-color: #5d6565; opacity:.7'>
+                    <h2>{{forloop.counter}}</h2>
                     <div class="todoname">
-                        playing games
+                        {{todo.title.capitalize}}
                     </div>
                     <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
+                        <p>{{todo.discript.capitalize}}</p>
                     </div>
-
                     <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
+                        <div class='actbtns'>
+                            <form action='deltodo' method='POST'>
+                                {% csrf_token %}
+                                <button id="delbtn" name='{{todo.id}}'>Delete</button>
+                            </form>
+                            <form action='statuschange' method='POST'>
+                                {% csrf_token %}
+                                <button id="donebtn" name='{{todo.id}}' disabled>Done</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                {% else %}
                 <div class="todoitem">
-                    <h2>1</h2>
+                    <h2>{{forloop.counter}}</h2>
                     <div class="todoname">
-                        playing games
+                        {{todo.title.capitalize}}
                     </div>
                     <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
+                        <p>{{todo.discript.capitalize}}</p>
                     </div>
-
                     <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
+                        <div class='actbtns'>
+                            <form action='deltodo' method='POST'>
+                                {% csrf_token %}
+                                <button id="delbtn" name='{{todo.id}}'>Delete</button>
+                            </form>
+                            <form action='statuschange' method='POST'>
+                                {% csrf_token %}
+                                <button id="donebtn" name='{{todo.id}}'>click to Done</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        playing games
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        playing games
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        playing games
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        playing games
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        playing games
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        playing games
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        Lunch
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="todoitem">
-                    <h2>1</h2>
-                    <div class="todoname">
-                        Lunch
-                    </div>
-                    <div class="discdiv">
-                        <p>take lunch at 9 am then go to bed for good sleep and then we add notes on note book on the
-                            base of my</p>
-                    </div>
-
-                    <div class="btns">
-                        <form action="">
-                            <button id="delbtn">Delete</button>
-                            <button id="donebtn">click to Done</button>
-                        </form>
-                    </div>
-                </div>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>

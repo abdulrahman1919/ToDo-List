@@ -187,17 +187,16 @@ form button:hover {
 
 .discdiv {
     padding: 4px 2px 4px 0px;
-    height: 100%;
     width: 60%;
     color: whitesmoke;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: auto;
 }
 
 .discdiv p {
     border-left: 1px solid black;
+    text-align: left;
     padding-left: 4px;
     font-size: 13px;
 }
@@ -212,7 +211,7 @@ form button:hover {
     padding-left: 5px;
 }
 
-.btns form {
+.btns div {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -220,7 +219,7 @@ form button:hover {
     height: 100%;
 }
 
-.btns form button {
+.btns div button {
     outline: none;
     border: none;
     height: 20px;
@@ -234,6 +233,7 @@ form button:hover {
 
 #delbtn {
     background-color: rgb(214, 56, 56);
+    width: 50px;
 }
 
 #delbtn:hover {
@@ -256,6 +256,16 @@ form button:hover {
 
 #donebtn:active {
     color: whitesmoke;
+}
+
+.emptydiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    font-size: 25px;
+    color: #0000007d;
+    font-weight: bold;
 }
 
 @media (max-width:1000px) and (min-width:850px) {
@@ -305,6 +315,10 @@ form button:hover {
         border: none;
         height: 100%;
     }
+
+    .emptydiv {
+        height: 180px;
+    }
 }
 
 @media (max-width:550px) and (min-width:500px) {
@@ -334,6 +348,10 @@ form button:hover {
 
     .todomain {
         transform: scale(.8);
+    }
+
+    .emptydiv {
+        height: 150px;
     }
 }
 
@@ -366,6 +384,10 @@ form button:hover {
         border: none;
         height: 100%;
     }
+
+    .emptydiv {
+        height: 120px;
+    }
 }
 
 @media (max-width:450px) and (min-width:370px) {
@@ -387,7 +409,7 @@ form button:hover {
         font-size: 11px
     }
 
-    .todoitem form button {
+    .actbtns button {
         font-size: 10px;
     }
 
@@ -418,6 +440,10 @@ form button:hover {
     body span {
         font-size: 40px;
     }
+
+    .emptydiv {
+        height: 100px;
+    }
 }
 
 @media (max-width:370px) and (min-width:320px) {
@@ -439,7 +465,7 @@ form button:hover {
         font-size: 11px
     }
 
-    .todoitem form button {
+    .actbtns button {
         font-size: 10px;
     }
 
@@ -468,5 +494,9 @@ form button:hover {
 
     body span {
         font-size: 40px;
+    }
+
+    .emptydiv {
+        height: 80px;
     }
 }
