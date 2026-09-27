@@ -14,10 +14,11 @@
     <div class="superdiv">
         <div class="todomain">
             <h2>Add To-Do</h2>
-            <form method="POST">
+            <form method="POST" action="addtodo">
+                {% csrf_token %}
                 <div class="labinput">
                     <label>Title:</label>
-                    <input type="text" name="title" placeholder="Title" maxlength="1">
+                    <input type="text" name="title" placeholder="Title" maxlength="13">
                 </div>
                 <div class="labinput">
                     <label>Description:</label>

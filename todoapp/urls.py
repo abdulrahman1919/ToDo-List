@@ -4,4 +4,5 @@ from todoapp import views
 
 urlpatterns = [
     path('', views.index,name='home'),
+    path('addtodo', views.addtodo,name='addtodo'),
 ]
