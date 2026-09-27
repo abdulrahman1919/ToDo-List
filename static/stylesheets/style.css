@@ -1,28 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 50px;
-    background: linear-gradient(to right, #1c7ca9 7%, #2ddbcb 109%);
+    background: linear-gradient(to right, #1c7ca9 7%, #2ddbcb 150%);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
-body span{
+
+body span {
     font-size: 50px;
     font-weight: 800;
+    margin-top: 5%;
 }
-.superdiv{
+
+.superdiv {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-.todomain{
+
+.todomain {
     background: linear-gradient(to right, #526ada 7%, #d17d45 130%);
     display: flex;
     justify-content: center;
@@ -33,7 +41,8 @@ body span{
     box-shadow: 0px 0px 20px 5px #3b3939;
     position: relative;
 }
-.todomain h2{
+
+.todomain h2 {
     backdrop-filter: blur(100px);
     width: 100%;
     text-align: center;
@@ -43,7 +52,8 @@ body span{
     border-top-right-radius: 10px;
     padding: 10px;
 }
-.todomain form{
+
+.todomain form {
     border: 4px solid black;
     border-top: 2px solid;
     padding: 40px 30px 20px 30px;
@@ -53,45 +63,52 @@ body span{
     flex-direction: column;
     gap: 25px;
 }
-.labinput{
+
+.labinput {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.labinput label{
+
+.labinput label {
     font-weight: 600;
 }
-.labinput input{
+
+.labinput input {
     height: 30px;
     width: 250px;
     border: 1px solid black;
-    padding: 5px ;
+    padding: 5px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 6px;
     outline: none;
 
 }
-.todomain button{
+
+.todomain button {
     height: 30px;
     width: 65px;
     border-radius: 10px;
     border: none;
     font-size: 13px;
     font-weight: 600;
-    background-color:royalblue;
+    background-color: royalblue;
     color: whitesmoke;
     cursor: pointer;
 
 }
-form button:active{
+
+form button:active {
     background-color: rosybrown;
     color: rgb(2, 2, 2);
 }
-form button:hover{
+
+form button:hover {
     background-color: rgb(38, 84, 223);
 }
-.todolist{
+
+.todolist {
     height: 360px;
     width: 600px;
     border-left: 7px solid black;
@@ -101,15 +118,37 @@ form button:hover{
     gap: 10px;
     overflow: auto;
 }
-.todolist h2{
+
+.todolist::-webkit-scrollbar {
+    width: 6px;
+}
+
+.todolist::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.todolist::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+}
+
+.todolist::-webkit-scrollbar-thumb:hover {
+    background: rgb(75, 74, 74);
+}
+
+.todolist h2 {
     text-align: center;
 }
-.todoitems{
+
+.todoitems {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 12px;
 }
-.todoitem{
+
+.todoitem {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -118,15 +157,15 @@ form button:hover{
     background-color: #0d95d4;
     height: 70px;
     width: 100%;
-    /* box-shadow: -3px 4px 13px 5px #0e0e0e59; */
 }
-.todoitem:hover{
+
+.todoitem:hover {
     box-shadow: -3px 4px 13px 5px #0e0e0e59;
-    transform: translate(0,-2px);
-    transition-duration: .3s; 
+    transform: translate(0, -2px);
+    transition-duration: .3s;
 }
-.todoitem h2{
-    /* background-color: red; */
+
+.todoitem h2 {
     height: 100%;
     width: 8%;
     display: flex;
@@ -134,8 +173,8 @@ form button:hover{
     align-items: center;
     border-right: 3px solid black;
 }
-.todoname{
-    /* background-color: red; */
+
+.todoname {
     height: 100%;
     width: 10%;
     display: flex;
@@ -145,7 +184,8 @@ form button:hover{
     font-size: 18px;
     font-weight: bold;
 }
-.discdiv{
+
+.discdiv {
     padding: 4px 2px 4px 0px;
     height: 100%;
     width: 60%;
@@ -155,14 +195,14 @@ form button:hover{
     align-items: center;
     height: auto;
 }
-.discdiv p{
+
+.discdiv p {
     border-left: 1px solid black;
     padding-left: 4px;
     font-size: 13px;
 }
 
-.btns{
-    /* background-color: red; */
+.btns {
     height: 100%;
     width: 22%;
     display: flex;
@@ -171,14 +211,16 @@ form button:hover{
     border-left: 2px solid black;
     padding-left: 5px;
 }
-.btns form{
+
+.btns form {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     height: 100%;
 }
-.btns form button{
+
+.btns form button {
     outline: none;
     border: none;
     height: 20px;
@@ -189,23 +231,242 @@ form button:hover{
     font-weight: 500;
     color: whitesmoke;
 }
-#delbtn{
+
+#delbtn {
     background-color: rgb(214, 56, 56);
 }
-#delbtn:hover{
+
+#delbtn:hover {
     background-color: rgb(212, 14, 14);
 }
-#delbtn:active{
+
+#delbtn:active {
     color: black;
 }
-#donebtn{
+
+#donebtn {
     background-color: rgba(255, 255, 0, 0.829);
     color: black;
 }
-#donebtn:hover{
+
+#donebtn:hover {
     background-color: yellow;
 
 }
-#donebtn:active{
+
+#donebtn:active {
     color: whitesmoke;
+}
+
+@media (max-width:1000px) and (min-width:850px) {
+    .superdiv {
+        transform: scale(.8);
+    }
+}
+
+@media (max-width:850px) and (min-width:750px) {
+    .superdiv {
+        transform: scale(.75);
+    }
+}
+
+@media (max-width:750px) and (min-width:630px) {
+    .superdiv {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    .todolist {
+        border: none;
+        height: 100%;
+    }
+}
+
+@media (max-width:630px) and (min-width:550px) {
+    .superdiv {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .todoitem {
+        width: 90%;
+        height: 80px;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    .todolist {
+        border: none;
+        height: 100%;
+    }
+}
+
+@media (max-width:550px) and (min-width:500px) {
+    .superdiv {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .todoitems {
+        height: 100%;
+    }
+
+    .todoitem {
+        height: 100%;
+        width: 90%;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    .todolist {
+        transform: scale(.9);
+        border: none;
+        height: 100%;
+    }
+
+    .todomain {
+        transform: scale(.8);
+    }
+}
+
+@media (max-width:500px) and (min-width:450px) {
+    .superdiv {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .todomain {
+        transform: scale(.8);
+    }
+
+    #donebtn {
+        font-size: 10px;
+        height: 25px;
+        width: 70px;
+    }
+
+    .todoitem {
+        height: 80px;
+        width: 70%;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    .todolist {
+        border: none;
+        height: 100%;
+    }
+}
+
+@media (max-width:450px) and (min-width:370px) {
+    .superdiv {
+        flex-direction: column-reverse;
+    }
+
+    .todomain {
+        transform: scale(.7);
+    }
+
+    .todoitem {
+        height: 60px;
+        width: 60%;
+        font-size: 13px;
+    }
+
+    .todoitem p {
+        font-size: 11px
+    }
+
+    .todoitem form button {
+        font-size: 10px;
+    }
+
+    .todoname {
+        font-size: 13px;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    #donebtn {
+        font-size: 8px;
+        color: white;
+        background-color: rgb(61, 72, 230);
+    }
+
+    #donebtn:hover {
+        background-color: rgb(26, 39, 221);
+    }
+
+    .todolist {
+        border: none;
+        padding: 0;
+        height: 100%;
+    }
+
+    body span {
+        font-size: 40px;
+    }
+}
+
+@media (max-width:370px) and (min-width:320px) {
+    .superdiv {
+        flex-direction: column-reverse;
+    }
+
+    .todomain {
+        transform: scale(.7);
+    }
+
+    .todoitem {
+        height: 70px;
+        width: 50%;
+        font-size: 13px;
+    }
+
+    .todoitem p {
+        font-size: 11px
+    }
+
+    .todoitem form button {
+        font-size: 10px;
+    }
+
+    .todoname {
+        font-size: 13px;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    #donebtn {
+        font-size: 8px;
+        color: white;
+        background-color: rgb(61, 72, 230);
+    }
+
+    #donebtn:hover {
+        background-color: rgb(26, 39, 221);
+    }
+
+    .todolist {
+        border: none;
+        height: 100%;
+    }
+
+    body span {
+        font-size: 40px;
+    }
 }
