@@ -6,16 +6,21 @@ from datetime import *
 def addtodo(request):
     if request.method=='POST':
         title=request.POST.get('title')
-        disc=request.POST.get('description') or 'no discription'
-        todo=Todo(title=title,discript=disc,addtime=datetime.now())
-        todo.save()
-        return redirect('/')
+        if title == "":
+            print('nodata')
+        else:
+            title=title.capitalize()
+            disc=request.POST.get('description') or 'No discription'
+            disc=disc.capitalize()
+            todo=Todo(title=title,discript=disc,addtime=datetime.now())
+            todo.save()
+            return redirect('/')
 
 def statuschange(request):
     if request.method=="POST":
         id=list(request.POST.keys())[1]
         obj=Todo.objects.get(id=id)
-        obj.status='Done'
+        obj.status='Completed'
         obj.save()
         print(obj.status)
     return redirect('/')

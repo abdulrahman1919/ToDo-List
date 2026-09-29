@@ -17,7 +17,7 @@
                 {% csrf_token %}
                 <div class="labinput">
                     <label>Title:</label>
-                    <input type="text" name="title" placeholder="Title" maxlength="13">
+                    <input type="text" name="title" placeholder="Title" maxlength="28" required>
                 </div>
                 <div class="labinput">
                     <label>Description:</label>
@@ -27,59 +27,44 @@
             </form>
         </div>
         <div class="todolist">
-            <h2>All To-Dos</h2>
+            <h2 style="text-align: center;">All To-Dos</h2>
             <div class="todoitems">
-                {% if  todos|length == 0%}
-                <div class='emptydiv'>
+                {% if todos|length == 0 %}
+                <div class="emptydiv">
                     empty
                 </div>
                 {% else %}
-                {% for todo in  todos%}
-                {% if todo.status == 'Done' %}
-                <div class="todoitem" style='background-color: #5d6565; opacity:.7'>
-                    <h2>{{forloop.counter}}</h2>
-                    <div class="todoname">
-                        {{todo.title.capitalize}}
-                    </div>
-                    <div class="discdiv">
-                        <p>{{todo.discript.capitalize}}</p>
-                    </div>
-                    <div class="btns">
-                        <div class='actbtns'>
-                            <form action='deltodo' method='POST'>
-                                {% csrf_token %}
-                                <button id="delbtn" name='{{todo.id}}'>Delete</button>
-                            </form>
-                            <form action='statuschange' method='POST'>
-                                {% csrf_token %}
-                                <button id="donebtn" name='{{todo.id}}' disabled>Done</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                {% else %}
+                {% for todo in todos %}
                 <div class="todoitem">
-                    <h2>{{forloop.counter}}</h2>
-                    <div class="todoname">
-                        {{todo.title.capitalize}}
-                    </div>
-                    <div class="discdiv">
-                        <p>{{todo.discript.capitalize}}</p>
+                    <div class="todoinfo">
+                        <div class="todoname">
+                            <h1>{{forloop.counter}}.</h1>
+                            <h2>{{todo.title}}</h2>
+                            {% if  todo.status == "Pending"%}
+                            <h4 style="color: rgb(199, 68, 68); margin-left: 7px;">{{todo.status}}</h4 style="margin-left: 10%;">
+                            {% else %}
+                                <h4 style="color: rgb(68, 199, 75); margin-left: 7px;">{{todo.status}}</h4 style="margin-left: 10%;">
+                            {% endif %}
+                        </div>
+                        <div class="discrip">
+                            {{todo.discript}}
+                        </div>
                     </div>
                     <div class="btns">
                         <div class='actbtns'>
                             <form action='deltodo' method='POST'>
                                 {% csrf_token %}
-                                <button id="delbtn" name='{{todo.id}}'>Delete</button>
+                                <button id="delbtn" name="{{todo.id}}">Delete</button>
                             </form>
+                            {% if todo.status == "Pending" %}
                             <form action='statuschange' method='POST'>
                                 {% csrf_token %}
-                                <button id="donebtn" name='{{todo.id}}'>click to Done</button>
+                                <button id="donebtn" name="{{todo.id}}">click to Done</button>
                             </form>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-                {% endif %}
                 {% endfor %}
                 {% endif %}
             </div>
