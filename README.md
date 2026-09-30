@@ -20,6 +20,7 @@ This project allows users to manage their daily tasks through a clean and simple
 - SQLite
 - Django Templates
 
+
 📸 Screenshots
 
 1st
@@ -33,7 +34,6 @@ This project allows users to manage their daily tasks through a clean and simple
 3rd
 
 ![To-Do List](screenshots/todo3.png)
-
 
 📂 Project Structure
 
