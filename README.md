@@ -58,7 +58,7 @@ ToDo-List/
 
 1. Clone the repository
 
-git clone https://github.com/abdurrahman1919/ToDo-List.git
+git clone https://github.com/abdulrahman1919/ToDo-List.git
 
 5. Install Django
 
@@ -120,7 +120,7 @@ This project is available for educational and personal use.
 Abdul Rahman Amin
 
 GitHub:
-https://github.com/abdurrahman1919
+https://github.com/abdulrahman1919
 
 ---
 
